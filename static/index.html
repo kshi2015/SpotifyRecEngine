@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotify Rec Engine — A Learning Project</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header>
+    <div class="header-logo">
+      <div class="logo-icon">♫</div>
+      <span class="header-title">Spotify Rec Engine</span>
+    </div>
+    <span class="header-subtitle">A learning project — 5 recommendation algorithms, side by side</span>
+  </header>
+
+  <!-- ── App Body ── -->
+  <div class="app-body">
+
+    <!-- ── Sidebar: User Selector ── -->
+    <aside class="sidebar">
+      <div class="sidebar-header">Users (30)</div>
+      <div class="user-list" id="user-list">
+        <!-- Populated by app.js -->
+      </div>
+    </aside>
+
+    <!-- ── Main Content ── -->
+    <main id="main-content">
+
+      <!-- Initial empty state (shown before a user is selected) -->
+      <div class="empty-state" id="empty-state">
+        <div class="empty-icon">🎵</div>
+        <h2>Select a user</h2>
+        <p>Choose a listener from the sidebar to see their personalized recommendations across 5 different algorithms.</p>
+      </div>
+
+      <!-- Content shown after a user is selected (hidden initially) -->
+      <div id="user-content" style="display:none;">
+
+        <!-- User header -->
+        <div class="section-header">
+          <span class="section-title" id="user-name-display"></span>
+          <span class="user-badge" id="user-taste-display"></span>
+        </div>
+
+        <!-- Listening History -->
+        <div class="history-section" id="history-section">
+          <div class="history-header">Listening History</div>
+          <div class="history-grid" id="history-grid">
+            <!-- Populated by app.js -->
+          </div>
+        </div>
+
+        <!-- Recommendations: 5 algorithm columns -->
+        <div class="recs-section">
+          <div class="recs-grid" id="recs-grid">
+            <!-- Populated by app.js -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Loading state -->
+      <div class="loading" id="loading-state" style="display:none;">
+        <div class="spinner"></div>
+        Loading recommendations…
+      </div>
+
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
