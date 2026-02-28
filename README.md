@@ -107,10 +107,10 @@ SpotifyRecEngine/
 cd SpotifyRecEngine
 
 # 2. Install Python dependencies
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 # 3. Start the server (from the SpotifyRecEngine/ directory)
-uvicorn api.main:app --reload --port 8000
+python3 -m uvicorn api.main:app --reload --port 8000
 
 # 4. Open the UI
 open http://localhost:8000/static/index.html
